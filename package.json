@@ -1,0 +1,13 @@
+{
+  "name": "krishi-sewa-agri-store",
+  "version": "1.0.0",
+  "description": "Krishi Sewa (कृषि सेवा) - India's Trusted Online Agriculture & Farming Store",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["krishi-sewa", "agriculture", "farming", "seeds", "fertilizer", "ecommerce"],
+  "author": "Krishi Sewa",
+  "license": "MIT"
+}

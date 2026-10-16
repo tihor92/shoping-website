@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishi Sewa | India's Trusted Online Agriculture & Farming Store</title>
+  <meta name="description" content="Krishi Sewa - Buy 100% certified high-yield seeds, organic fertilizers, farming tools, sprayers, and crop protection online with doorstep delivery and expert agronomy support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" id="announcement-bar">
+    <div class="container announcement-inner">
+      <span class="announcement-tag">🌱 KISAN SAMRIDDHI 2026</span>
+      <p>Use code <span class="badge-code">KISAN20</span> for 20% off your agricultural supplies! Free delivery on orders over ₹1,500.</p>
+      <div class="announcement-actions">
+        <select id="currency-select" aria-label="Select Currency" class="currency-picker">
+          <option value="INR" selected>INR (₹)</option>
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="main-header">
+    <!-- Top Row: Left (Search), Center (Krishi Sewa Brand), Right (Actions) -->
+    <div class="container header-main-row">
+      <!-- Left: Mobile Menu Toggle & Search Bar -->
+      <div class="header-left">
+        <button class="icon-btn mobile-menu-btn" id="mobile-menu-toggle" aria-label="Open Mobile Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <div class="header-search-wrapper">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="global-search-input" placeholder="Search seeds, fertilizer, sprayers..." autocomplete="off">
+          <button id="clear-search-btn" class="clear-search-btn" aria-label="Clear Search" style="display: none;">&times;</button>
+        </div>
+      </div>
+
+      <!-- Center: Krishi Sewa Brand in One Line -->
+      <div class="header-center">
+        <a href="#" class="brand-logo" id="brand-logo">
+          <span class="logo-mark">
+            <!-- Sprout / Agriculture SVG mark -->
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22V12" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M12 12C12 7.02944 16.0294 3 21 3C21 7.97056 16.9706 12 12 12Z" fill="url(#logo-grad)" stroke="url(#logo-grad)" stroke-width="1.5"/>
+              <path d="M12 15C12 10.5817 8.41828 7 4 7C4 11.4183 7.58172 15 12 15Z" fill="url(#logo-grad-accent)" stroke="url(#logo-grad-accent)" stroke-width="1.5"/>
+              <defs>
+                <linearGradient id="logo-grad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#10B981"/>
+                  <stop offset="1" stop-color="#059669"/>
+                </linearGradient>
+                <linearGradient id="logo-grad-accent" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#F59E0B"/>
+                  <stop offset="1" stop-color="#10B981"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <div class="brand-text-wrap">
+            <div class="brand-title-row">
+              <span class="brand-name">Krishi Sewa</span>
+              <span class="brand-badge-tag">कृषि सेवा</span>
+            </div>
+            <span class="brand-sub">India's Trusted Kisan Agri Portal</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Right: Header Controls -->
+      <div class="header-right header-actions">
+        <!-- Theme Toggle -->
+        <button class="icon-btn theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark/Light Theme" title="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <!-- Wishlist Button -->
+        <button class="icon-btn" id="wishlist-toggle-btn" aria-label="View Saved Items" title="Saved for your Farm">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="action-badge" id="wishlist-badge">0</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="cart-trigger-btn" id="cart-toggle-btn" aria-label="View Farm Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-label">Kisan Cart</span>
+          <span class="cart-count-pill" id="cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Centered Category Navigation Bar -->
+    <div class="header-nav-row">
+      <div class="container">
+        <nav class="desktop-nav" id="desktop-nav">
+          <button class="nav-link active" data-category="all">All Products</button>
+          <button class="nav-link" data-category="seeds">Seeds</button>
+          <button class="nav-link" data-category="fertilizers">Bio-Fertilizers</button>
+          <button class="nav-link" data-category="equipment">Tools & Machinery</button>
+          <button class="nav-link" data-category="protection">Crop Care</button>
+          <button class="nav-link" data-category="irrigation">Irrigation</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Navigation -->
+  <div class="mobile-drawer-overlay" id="mobile-nav-overlay">
+    <div class="mobile-drawer" id="mobile-nav-drawer">
+      <div class="drawer-header">
+        <span class="brand-name">Krishi Sewa</span>
+        <button class="icon-btn close-btn" id="close-mobile-nav" aria-label="Close navigation">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <button class="mobile-nav-link active" data-category="all">🌾 All Farm Supplies</button>
+        <button class="mobile-nav-link" data-category="seeds">🌱 Certified Seeds</button>
+        <button class="mobile-nav-link" data-category="fertilizers">🧪 Bio-Fertilizers & Nutrients</button>
+        <button class="mobile-nav-link" data-category="equipment">🚜 Farm Tools & Sprayers</button>
+        <button class="mobile-nav-link" data-category="protection">🛡️ Crop Protection & Neem</button>
+        <button class="mobile-nav-link" data-category="irrigation">💧 Drip & Sprinkler Irrigation</button>
+      </div>
+      <div class="mobile-nav-footer">
+        <p class="text-sm">🌾 100% Genuine Agri-Inputs</p>
+        <p class="text-muted text-xs">Trusted by 65,000+ Indian Farmers Across 18 States</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero Banner Section -->
+    <section class="hero-section" id="hero-banner">
+      <div class="hero-bg-glow"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Kisan Portal 2026 • 100% Certified Genuine Agri-Inputs</span>
+          </div>
+          <h1 class="hero-title">
+            Grow Abundant Crops with <span class="gradient-text">Krishi Sewa</span>
+          </h1>
+          <p class="hero-subtitle">
+            Direct lab-to-field delivery of certified high-yield hybrid seeds, 100% organic bio-fertilizers, solar sprayers, and precision irrigation delivered straight to your farm.
+          </p>
+          <div class="hero-cta-group">
+            <button class="btn btn-primary" id="hero-shop-btn">
+              Explore Farm Store
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+            <button class="btn btn-secondary" id="hero-featured-btn">
+              Seeds & Bio-Nutrients
+            </button>
+          </div>
+          <div class="hero-features">
+            <div class="hero-feat-item">
+              <span class="feat-icon">🌾</span>
+              <div>
+                <strong>Government Tested & Certified</strong>
+                <span>99.8% Germination Purity</span>
+              </div>
+            </div>
+            <div class="hero-feat-item">
+              <span class="feat-icon">🚚</span>
+              <div>
+                <strong>Direct Village Delivery</strong>
+                <span>Across 19,000+ PIN Codes</span>
+              </div>
+            </div>
+            <div class="hero-feat-item">
+              <span class="feat-icon">📞</span>
+              <div>
+                <strong>Toll-Free Kisan Support</strong>
+                <span>Free Crop Advisory 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-display">
+            <div class="hero-product-preview">
+              <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80" alt="Krishi Sewa Certified High Yield Seeds and Farm Care" class="hero-img">
+              <div class="floating-badge hero-float-top">
+                <span class="badge-status">🌟 TOP HARVEST PICK</span>
+                <span class="badge-title">Hybrid Wheat HD-3086 Shresth</span>
+              </div>
+              <div class="floating-badge hero-float-bottom">
+                <span class="rating-stars">★★★★★</span>
+                <span class="hero-price-tag">₹1,249.00 <small style="font-size: 0.75rem; font-weight: normal;">/ 40kg</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Propositions Strip -->
+    <section class="perks-strip">
+      <div class="container perks-grid">
+        <div class="perk-card">
+          <div class="perk-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div>
+            <h4>100% Genuine Agri-Inputs</h4>
+            <p>Direct from verified seed breeders and organic research labs</p>
+          </div>
+        </div>
+
+        <div class="perk-card">
+          <div class="perk-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          </div>
+          <div>
+            <h4>Doorstep Farm Delivery</h4>
+            <p>Direct shipping to your panchayat and village depot</p>
+          </div>
+        </div>
+
+        <div class="perk-card">
+          <div class="perk-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <div>
+            <h4>COD & Kisan Credit Card</h4>
+            <p>UPI, Cash on Delivery, NetBanking, and RuPay supported</p>
+          </div>
+        </div>
+
+        <div class="perk-card">
+          <div class="perk-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <div>
+            <h4>Agronomist Helpline 24/7</h4>
+            <p>Free crop guidance, pest diagnosis, and soil dosage advice</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Catalog Section -->
+    <section class="catalog-section" id="catalog-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Verified Agri-Supplies & Equipment</h2>
+            <p class="section-description">High-germination seeds, organic fertilizers, precision sprayers, and soil health essentials.</p>
+          </div>
+          <div class="catalog-stats" id="catalog-stats">
+            Showing <span id="displayed-count">0</span> items
+          </div>
+        </div>
+
+        <!-- Filter & Sorting Bar -->
+        <div class="filter-controls-bar">
+          <!-- Category Chips -->
+          <div class="category-pills" id="category-pills">
+            <button class="pill-btn active" data-category="all">All Products</button>
+            <button class="pill-btn" data-category="seeds">Seeds</button>
+            <button class="pill-btn" data-category="fertilizers">Bio-Fertilizers</button>
+            <button class="pill-btn" data-category="equipment">Tools & Sprayers</button>
+            <button class="pill-btn" data-category="protection">Crop Care</button>
+            <button class="pill-btn" data-category="irrigation">Irrigation</button>
+          </div>
+
+          <!-- Secondary Filter / Sort Options -->
+          <div class="filter-dropdowns">
+            <!-- Price Range Filter Dropdown -->
+            <div class="filter-item">
+              <label for="price-range-filter" class="filter-label">Max Price:</label>
+              <div class="range-slider-wrapper">
+                <input type="range" id="price-range-filter" min="150" max="6000" step="100" value="6000">
+                <span id="price-slider-display">₹6,000</span>
+              </div>
+            </div>
+
+            <!-- Sort By -->
+            <div class="filter-item">
+              <label for="sort-select" class="filter-label">Sort by:</label>
+              <select id="sort-select" class="custom-select">
+                <option value="featured">Featured / Best Harvest</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Farmer Rating</option>
+                <option value="name">Product Name (A-Z)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="products-grid">
+          <!-- Dynamically populated via app.js -->
+        </div>
+
+        <!-- Empty State (Shown when no search/filters match) -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <div class="empty-icon">🌾</div>
+          <h3>No matching agricultural supplies found</h3>
+          <p>We couldn't find any products matching your search criteria or price filter.</p>
+          <button class="btn btn-primary" id="reset-filters-btn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Promo Banner -->
+    <section class="banner-highlight">
+      <div class="container highlight-inner">
+        <div class="highlight-content">
+          <span class="highlight-pill">KHARIF & RABI HARVEST SPECIAL</span>
+          <h2>High-Capacity Battery Sprayer 16L (Dual Motor)</h2>
+          <p>Cover up to 4 acres on a single charge with precision dual brass nozzles, heavy-duty padded backstraps, and continuous pressure regulation.</p>
+          <div class="countdown-timer" id="deal-countdown">
+            <div class="time-block"><span id="cd-hours">14</span><label>Hours</label></div>
+            <span class="cd-colon">:</span>
+            <div class="time-block"><span id="cd-minutes">32</span><label>Mins</label></div>
+            <span class="cd-colon">:</span>
+            <div class="time-block"><span id="cd-seconds">48</span><label>Secs</label></div>
+          </div>
+          <button class="btn btn-light" id="highlight-cta-btn">Claim Deal at ₹2,299</button>
+        </div>
+        <div class="highlight-image">
+          <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=700&q=80" alt="Krishi Sewa Professional Sprayer & Crop Care" class="promo-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="reviews-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title">Trusted by 65,000+ Progressive Farmers</h2>
+          <p class="section-description">Hear how Krishi Sewa delivers reliable inputs, higher crop yields, and disease resistance across India.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="test-stars">★★★★★</div>
+            <p class="test-text">"The Arka Rakshak hybrid tomato seeds and organic vermicompost gave us an outstanding yield this season. Zero pest infestation and fruit weight was top-tier."</p>
+            <div class="test-user">
+              <div class="user-avatar">RP</div>
+              <div>
+                <strong>Ramesh Patel</strong>
+                <span>Horticulture Cultivator, Anand (Gujarat)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="test-stars">★★★★★</div>
+            <p class="test-text">"Ordered the 16L battery sprayer and HD-3086 wheat seed bag. Packaging was sealed, genuine batch certificate included, and delivered right to our village within 3 days."</p>
+            <div class="test-user">
+              <div class="user-avatar">GS</div>
+              <div>
+                <strong>Gurpreet Singh</strong>
+                <span>Wheat & Paddy Farmer, Ludhiana (Punjab)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="test-stars">★★★★★</div>
+            <p class="test-text">"The pure cold-pressed Neem Oil bio-pesticide and drip irrigation kit saved my pomegranate orchard from aphids without damaging pollinating bees. Outstanding service!"</p>
+            <div class="test-user">
+              <div class="user-avatar">SD</div>
+              <div>
+                <strong>Sunita Devi</strong>
+                <span>Organic Farming Collective, Nashik (Maharashtra)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter-section">
+      <div class="container newsletter-box">
+        <div class="newsletter-info">
+          <h3>Join the Krishi Sewa Farmer Advisory</h3>
+          <p>Get weekly weather alerts, Mandi bhav updates, government subsidy notices, and seasonal sowing tips directly in your inbox.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Enter your email or phone number" required>
+          <button type="submit" class="btn btn-primary" id="newsletter-submit-btn">Join Free</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <a href="#" class="brand-logo footer-logo">
+          <span class="logo-mark">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22V12" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M12 12C12 7.02944 16.0294 3 21 3C21 7.97056 16.9706 12 12 12Z" fill="#10B981"/>
+            </svg>
+          </span>
+          <span class="brand-name">Krishi Sewa</span>
+        </a>
+        <p class="footer-tagline">कृषि सेवा — Empowering Indian agriculture with verified seeds, modern equipment, and bio-nutrients for maximum harvest.</p>
+        <div class="social-links">
+          <a href="#" aria-label="WhatsApp" class="social-icon">📱</a>
+          <a href="#" aria-label="YouTube" class="social-icon">▶️</a>
+          <a href="#" aria-label="Twitter" class="social-icon">𝕏</a>
+          <a href="#" aria-label="Facebook" class="social-icon">🌾</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Agri Categories</h4>
+        <ul>
+          <li><a href="#" class="footer-filter-link" data-category="seeds">Certified High-Yield Seeds</a></li>
+          <li><a href="#" class="footer-filter-link" data-category="fertilizers">Bio-Fertilizers & Nutrients</a></li>
+          <li><a href="#" class="footer-filter-link" data-category="equipment">Tools, Sprayers & Machinery</a></li>
+          <li><a href="#" class="footer-filter-link" data-category="protection">Crop Protection & Neem</a></li>
+          <li><a href="#" class="footer-filter-link" data-category="irrigation">Micro-Drip Irrigation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Farmer Support</h4>
+        <ul>
+          <li><a href="#tracking">Village Delivery Tracking</a></li>
+          <li><a href="#advisory">Free Agronomist Consultation</a></li>
+          <li><a href="#subsidies">PM Kisan & Subsidy Guidance</a></li>
+          <li><a href="#soil">Soil Testing Kit Guide</a></li>
+          <li><a href="#kisan-card">KCC & Payment FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Krishi Sewa Kendra</h4>
+        <ul>
+          <li><a href="#about">About Krishi Sewa</a></li>
+          <li><a href="#dealers">Become a Rural Franchise Dealer</a></li>
+          <li><a href="#quality">Lab Certification & Purity Policy</a></li>
+          <li><a href="#terms">Farmer Privacy & Protection</a></li>
+          <li><a href="#contact">Toll-Free Kisan Call Center</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Krishi Sewa AgriTech Solutions. All rights reserved. Dedicated to India's Annadata.</p>
+      <div class="payment-methods">
+        <span class="pay-chip">UPI / PhonePe</span>
+        <span class="pay-chip">Google Pay</span>
+        <span class="pay-chip">RuPay</span>
+        <span class="pay-chip">Kisan Credit Card</span>
+        <span class="pay-chip">Cash on Delivery</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <div class="drawer-overlay" id="cart-drawer-overlay">
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <div class="cart-drawer-header">
+        <div class="cart-title-wrap">
+          <h3 id="cart-title">Kisan Farm Bag</h3>
+          <span class="cart-items-tag" id="cart-drawer-items-count">0 items</span>
+        </div>
+        <button class="icon-btn close-btn" id="close-cart-btn" aria-label="Close cart">&times;</button>
+      </div>
+
+      <!-- Free Shipping Progress Threshold -->
+      <div class="shipping-progress-box">
+        <div class="shipping-info-text">
+          <span id="shipping-progress-msg">Add ₹1,500.00 more for FREE village delivery!</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="shipping-progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Item List Container -->
+      <div class="cart-items-container" id="cart-items-list">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Cart Footer / Checkout Actions -->
+      <div class="cart-drawer-footer" id="cart-drawer-footer">
+        <!-- Promo Coupon Input -->
+        <div class="promo-box">
+          <input type="text" id="promo-code-input" placeholder="Coupon (try KISAN20)" uppercase>
+          <button class="btn btn-outline-sm" id="apply-promo-btn">Apply</button>
+        </div>
+        <div id="promo-applied-tag" class="promo-applied-tag" style="display: none;">
+          <span>🎉 Code <strong id="applied-promo-name">KISAN20</strong> applied (-20%)</span>
+          <button id="remove-promo-btn">&times;</button>
+        </div>
+
+        <!-- Cost Breakdown -->
+        <div class="cart-summary-breakdown">
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">₹0.00</span>
+          </div>
+          <div class="summary-line discount-line" id="cart-discount-row" style="display: none;">
+            <span>Farmer Discount</span>
+            <span id="cart-discount">-₹0.00</span>
+          </div>
+          <div class="summary-line">
+            <span>Village Delivery / Logistics</span>
+            <span id="cart-shipping">₹0.00</span>
+          </div>
+          <div class="summary-line summary-total">
+            <span>Total Payable</span>
+            <span id="cart-total">₹0.00</span>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-block checkout-btn" id="checkout-start-btn">
+          Proceed to Order
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <p class="checkout-guarantee">🔒 100% Genuine Agri-Inputs Guarantee • Cash on Delivery Available</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Wishlist Drawer / Modal -->
+  <div class="drawer-overlay" id="wishlist-drawer-overlay">
+    <aside class="cart-drawer wishlist-drawer" id="wishlist-drawer" role="dialog" aria-modal="true">
+      <div class="cart-drawer-header">
+        <div class="cart-title-wrap">
+          <h3>Saved for Next Sowing</h3>
+          <span class="cart-items-tag" id="wishlist-items-count">0 items</span>
+        </div>
+        <button class="icon-btn close-btn" id="close-wishlist-btn" aria-label="Close wishlist">&times;</button>
+      </div>
+      <div class="cart-items-container" id="wishlist-items-list">
+        <!-- Rendered via JS -->
+      </div>
+    </aside>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickview-modal-overlay">
+    <div class="modal-card quickview-modal" id="quickview-modal" role="dialog" aria-modal="true">
+      <button class="icon-btn modal-close-btn" id="close-quickview-btn" aria-label="Close Quick View">&times;</button>
+      <div class="quickview-grid">
+        <div class="quickview-media">
+          <img id="qv-main-image" src="" alt="Product Image">
+          <div class="qv-badge" id="qv-badge">Certified</div>
+        </div>
+        <div class="quickview-details">
+          <span class="qv-category" id="qv-category">Certified Seeds</span>
+          <h2 class="qv-title" id="qv-title">Product Title</h2>
+          <div class="qv-rating-wrap">
+            <span class="stars" id="qv-stars">★★★★★</span>
+            <span class="qv-reviews" id="qv-reviews">(120 farmer reviews)</span>
+          </div>
+          <div class="qv-price-wrap">
+            <span class="qv-price" id="qv-price">₹1,249.00</span>
+            <span class="qv-old-price" id="qv-old-price">₹1,499.00</span>
+          </div>
+          <p class="qv-description" id="qv-description">Detailed description will load here.</p>
+
+          <div class="qv-spec-highlights" id="qv-specs">
+            <!-- Dynamic specs -->
+          </div>
+
+          <div class="qv-options">
+            <div class="qv-option-group">
+              <label>Packaging Variant / Size:</label>
+              <div class="color-picker" id="qv-color-picker">
+                <!-- Variant dots/chips -->
+              </div>
+            </div>
+
+            <div class="qv-option-group">
+              <label>Units:</label>
+              <div class="qty-selector">
+                <button type="button" id="qv-qty-minus">-</button>
+                <input type="number" id="qv-qty-input" value="1" min="1" max="50" readonly>
+                <button type="button" id="qv-qty-plus">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="qv-actions">
+            <button class="btn btn-primary btn-block" id="qv-add-cart-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              Add to Kisan Bag
+            </button>
+            <button class="icon-btn qv-wish-btn" id="qv-wish-btn" aria-label="Save for later" title="Save for later">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Checkout Simulation Modal -->
+  <div class="modal-overlay" id="checkout-modal-overlay">
+    <div class="modal-card checkout-modal" id="checkout-modal" role="dialog" aria-modal="true">
+      <button class="icon-btn modal-close-btn" id="close-checkout-btn" aria-label="Close Checkout">&times;</button>
+      
+      <!-- Checkout Stage 1: Form & Payment -->
+      <div id="checkout-step-form">
+        <div class="checkout-header">
+          <h3>Krishi Sewa Express Farm Checkout</h3>
+          <p>Direct doorstep delivery to your farm or panchayat center.</p>
+        </div>
+
+        <form id="simulated-checkout-form">
+          <div class="form-section">
+            <h4>1. Farmer Delivery Details</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-firstname">Farmer Full Name</label>
+                <input type="text" id="co-firstname" required placeholder="Ramesh" value="Ramesh Kumar">
+              </div>
+              <div class="form-group">
+                <label for="co-lastname">Mobile / WhatsApp Number</label>
+                <input type="tel" id="co-lastname" required placeholder="+91 98765 43210" value="+91 98765 43210">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="co-email">Email Address (Optional receipt)</label>
+              <input type="email" id="co-email" placeholder="ramesh.farmer@example.com" value="ramesh.krishi@example.com">
+            </div>
+            <div class="form-group">
+              <label for="co-address">Farm / Village Address & Landmark</label>
+              <input type="text" id="co-address" required placeholder="Near Primary School, Village Pipariya" value="Near Primary School, Village Pipariya, Post Khajuraho">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-city">District / Tehsil</label>
+                <input type="text" id="co-city" required placeholder="Chhatarpur" value="Chhatarpur, MP">
+              </div>
+              <div class="form-group">
+                <label for="co-zip">PIN Code</label>
+                <input type="text" id="co-zip" required placeholder="471001" value="471001" maxlength="6">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4>2. Payment Preference</h4>
+            <div class="payment-tabs">
+              <label class="pay-tab active">
+                <input type="radio" name="pay-method" value="cod" checked>
+                <span>Cash on Delivery (Pay at Farm)</span>
+              </label>
+              <label class="pay-tab">
+                <input type="radio" name="pay-method" value="upi">
+                <span>UPI / GPay / PhonePe / RuPay</span>
+              </label>
+            </div>
+
+            <div class="card-inputs" id="card-inputs">
+              <div style="background: var(--bg-card); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.85rem; color: var(--text-secondary);">
+                🌾 <strong>Pay on Inspection:</strong> You can pay in cash or scan the delivery agent's UPI QR code upon inspecting the sealed seed and fertilizer packages.
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-total-box">
+            <span>Total Payable at Delivery:</span>
+            <strong id="co-summary-total">₹0.00</strong>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="pay-confirm-btn">
+            <span class="btn-text">Confirm Farm Order</span>
+            <span class="btn-spinner" style="display: none;">Generating Delivery Slip...</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Checkout Stage 2: Success Confirmation -->
+      <div id="checkout-step-success" style="display: none;" class="checkout-success-view">
+        <div class="success-icon-animation">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3>Farm Order Confirmed! (कृषि आर्डर सफल)</h3>
+        <p class="success-order-id">Krishi Order ID: <strong id="confirmed-order-id">#KS-882910</strong></p>
+        <p class="success-msg">धन्यवाद! Your order has been dispatched from the nearest Krishi Sewa regional hub. SMS tracking details have been sent to your mobile.</p>
+        <div class="order-summary-box" id="success-items-preview">
+          <!-- Mini preview of ordered items -->
+        </div>
+        <button class="btn btn-primary" id="continue-shopping-btn">Order More Farm Supplies</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
