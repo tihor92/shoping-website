@@ -4,6 +4,7 @@
   "description": "Krishi Sewa (कृषि सेवा) - India's Trusted Online Agriculture & Farming Store",
   "main": "server.js",
   "scripts": {
+    "build": "echo \"Build ready\"",
     "start": "node server.js",
     "dev": "node server.js"
   },
