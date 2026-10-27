@@ -1,0 +1,35 @@
+[
+  {
+    "id": "usr-admin-1",
+    "name": "Krishi Sewa Administrator",
+    "email": "admin@krishisewa.org",
+    "phone": "9876543210",
+    "passwordHash": "$2b$10$VR3HnFdo7DwOHcQ54imh5.X7.Bu7neE7urotw/zpVjbygQddrj/oS",
+    "role": "admin",
+    "state": "New Delhi",
+    "village": "IARI Pusa Campus",
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "usr-farmer-1",
+    "name": "Ramesh Patel (किसान)",
+    "email": "ramesh.farmer@krishisewa.org",
+    "phone": "9898989898",
+    "passwordHash": "$2b$10$aN0v26gX90uoYQMuOe3/3.Wi0bNNqH0eFr88KNVI8KGnkx/unJxwW",
+    "role": "farmer",
+    "state": "Gujarat",
+    "village": "Anand Taluka, Kheda",
+    "createdAt": "2026-02-15T00:00:00Z"
+  },
+  {
+    "id": "usr-641443",
+    "name": "Devendra Kumar",
+    "email": "9811223344@krishisewa.org",
+    "phone": "9811223344",
+    "passwordHash": "$2b$10$9u64fA6PC2Yn/2W0GzVBz.phptKmhvsShQutoSaDuwM.p6rH3FWMW",
+    "role": "farmer",
+    "state": "Uttar Pradesh",
+    "village": "Aligarh",
+    "createdAt": "2026-10-27T14:34:01.443Z"
+  }
+]

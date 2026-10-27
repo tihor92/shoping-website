@@ -8,7 +8,20 @@
     "start": "node server.js",
     "dev": "node server.js"
   },
-  "keywords": ["krishi-sewa", "agriculture", "farming", "seeds", "fertilizer", "ecommerce"],
+  "keywords": [
+    "krishi-sewa",
+    "agriculture",
+    "farming",
+    "seeds",
+    "fertilizer",
+    "ecommerce"
+  ],
   "author": "Krishi Sewa",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3"
+  }
 }

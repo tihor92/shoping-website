@@ -28,6 +28,32 @@
     </div>
   </aside>
 
+  <!-- Live Mandi Rates Real-Time Ticker Bar -->
+  <div class="mandi-ticker-bar" id="mandi-ticker-bar">
+    <div class="container mandi-ticker-inner">
+      <div class="mandi-ticker-badge">
+        <span class="live-pulse"></span>
+        <span>LIVE MANDI & MSP</span>
+      </div>
+      <div class="mandi-ticker-viewport">
+        <div class="mandi-ticker-track" id="mandi-ticker-track">
+          <!-- Populated by app.js via /api/mandi-rates -->
+          <span class="mandi-ticker-item">🌾 Wheat: ₹2,850/Qtl (MSP ₹2,275) <span class="trend-up">▲</span></span>
+          <span class="mandi-ticker-item">🌾 Basmati 1121: ₹4,200/Qtl <span class="trend-up">▲</span></span>
+          <span class="mandi-ticker-item">🌱 Mustard: ₹5,650/Qtl (MSP ₹5,650)</span>
+          <span class="mandi-ticker-item">⚪ Cotton: ₹7,420/Qtl (MSP ₹7,121) <span class="trend-up">▲</span></span>
+          <span class="mandi-ticker-item">🟡 Soybean: ₹4,890/Qtl <span class="trend-down">▼</span></span>
+          <span class="mandi-ticker-item">🧅 Onion: ₹2,450/Qtl <span class="trend-up">▲</span></span>
+          <span class="mandi-ticker-item">🥔 Potato: ₹1,650/Qtl (MSP ₹1,500)</span>
+        </div>
+      </div>
+      <button class="mandi-view-all-btn" id="open-mandi-btn" title="View State-wise APMC Rates">
+        <span>Mandi Board</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </div>
+
   <!-- Navigation Header -->
   <header class="site-header" id="main-header">
     <!-- Top Row: Left (Search), Center (Krishi Sewa Brand), Right (Actions) -->
@@ -77,6 +103,18 @@
 
       <!-- Right: Header Controls -->
       <div class="header-right header-actions">
+        <!-- Track Order Button -->
+        <button class="nav-chip-btn" id="track-order-btn" title="Track Your Farm Order">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          <span class="chip-label">Track Order</span>
+        </button>
+
+        <!-- Farmer Auth / Account Button -->
+        <button class="nav-chip-btn auth-chip-btn" id="auth-btn" title="Kisan Login / Registration">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span class="chip-label" id="auth-btn-label">Kisan Login</span>
+        </button>
+
         <!-- Theme Toggle -->
         <button class="icon-btn theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark/Light Theme" title="Toggle Theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -100,7 +138,7 @@
 
     <!-- Centered Category Navigation Bar -->
     <div class="header-nav-row">
-      <div class="container">
+      <div class="container nav-container-flex">
         <nav class="desktop-nav" id="desktop-nav">
           <button class="nav-link active" data-category="all">All Products</button>
           <button class="nav-link" data-category="seeds">Seeds</button>
@@ -109,6 +147,17 @@
           <button class="nav-link" data-category="protection">Crop Care</button>
           <button class="nav-link" data-category="irrigation">Irrigation</button>
         </nav>
+        <div class="portal-extra-nav">
+          <button class="portal-nav-btn highlight-gold" id="nav-mandi-btn">
+            <span class="pulse-indicator"></span> 📊 Mandi MSP Rates
+          </button>
+          <button class="portal-nav-btn highlight-green" id="nav-bazaar-btn">
+            🚜 Kisan Bazaar (Sell Crop)
+          </button>
+          <button class="portal-nav-btn" id="nav-doctor-btn">
+            🩺 Krishi Doctor (Ask Agronomist)
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -700,6 +749,352 @@
           <!-- Mini preview of ordered items -->
         </div>
         <button class="btn btn-primary" id="continue-shopping-btn">Order More Farm Supplies</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. LIVE APMC MANDI & MSP EXPLORER MODAL -->
+  <div class="modal-overlay" id="mandi-modal" role="dialog" aria-modal="true" aria-labelledby="mandi-modal-title">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-badge-chip">APMC MANDI & GOVT MSP</span>
+          <h3 id="mandi-modal-title">🌾 State-wise Live Mandi Market Rates</h3>
+          <p class="modal-sub">Real-time daily modal prices compared with Government Guaranteed MSP (Minimum Support Price)</p>
+        </div>
+        <button class="icon-btn close-btn" id="close-mandi-modal" aria-label="Close Mandi modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="mandi-filter-row">
+          <div class="form-group flex-1">
+            <label for="mandi-state-filter">Select State</label>
+            <select id="mandi-state-filter" class="form-select">
+              <option value="all">All States (18 States Covered)</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+            </select>
+          </div>
+          <div class="form-group flex-1">
+            <label for="mandi-crop-search">Search Crop</label>
+            <input type="text" id="mandi-crop-search" placeholder="e.g. Wheat, Mustard, Rice..." class="form-input">
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="mandi-table" id="mandi-rates-table">
+            <thead>
+              <tr>
+                <th>Crop & Variety</th>
+                <th>State & APMC Mandi</th>
+                <th>Govt MSP</th>
+                <th>Today's Modal Price</th>
+                <th>Price Range (Min - Max)</th>
+                <th>Market Trend</th>
+              </tr>
+            </thead>
+            <tbody id="mandi-table-body">
+              <!-- Dynamically rendered from /api/mandi-rates -->
+            </tbody>
+          </table>
+        </div>
+        <div class="mandi-footer-note">
+          <small>💡 <strong>Farmer Advantage:</strong> Under Krishi Sewa Fair Price Protection, buyers cannot bid lower than the official Government MSP benchmark.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. KISAN BAZAAR (FARMER DIRECT HARVEST MARKETPLACE) MODAL -->
+  <div class="modal-overlay" id="bazaar-modal" role="dialog" aria-modal="true" aria-labelledby="bazaar-modal-title">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-badge-chip">KISAN TO BUYER MARKETPLACE</span>
+          <h3 id="bazaar-modal-title">🚜 Kisan Bazaar — Sell Directly Without Middlemen</h3>
+          <p class="modal-sub">List your harvested crops, set your price, and connect with verified procurement partners.</p>
+        </div>
+        <button class="icon-btn close-btn" id="close-bazaar-modal" aria-label="Close Bazaar modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="bazaar-tabs-nav">
+          <button class="bazaar-tab active" id="tab-browse-crops">🌾 Browse Harvest for Sale</button>
+          <button class="bazaar-tab" id="tab-list-crop">+ Post Your Crop for Sale</button>
+        </div>
+
+        <!-- Tab 1: Browse Crops Feed -->
+        <div id="bazaar-view-browse" class="bazaar-tab-view active">
+          <div class="bazaar-grid" id="bazaar-listings-grid">
+            <!-- Dynamically rendered from /api/farmer/crops -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Post Crop Listing Form -->
+        <div id="bazaar-view-post" class="bazaar-tab-view" style="display: none;">
+          <form id="sell-crop-form" class="bazaar-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="sell-farmer-name">Farmer Name</label>
+                <input type="text" id="sell-farmer-name" required placeholder="e.g. Baldev Singh">
+              </div>
+              <div class="form-group">
+                <label for="sell-farmer-phone">Mobile / WhatsApp Number</label>
+                <input type="tel" id="sell-farmer-phone" required placeholder="+91 98765 43210">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="sell-crop-name">Crop Name</label>
+                <input type="text" id="sell-crop-name" required placeholder="e.g. Sharbati Wheat, Basmati Rice, Mustard">
+              </div>
+              <div class="form-group">
+                <label for="sell-crop-variety">Variety / Seed Spec</label>
+                <input type="text" id="sell-crop-variety" placeholder="e.g. HD-3086 or Pusa 1121">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="sell-quantity">Estimated Quantity (Quintals)</label>
+                <input type="number" id="sell-quantity" required min="1" placeholder="e.g. 50">
+              </div>
+              <div class="form-group">
+                <label for="sell-price">Asking Price per Quintal (₹)</label>
+                <input type="number" id="sell-price" required min="500" placeholder="e.g. 2800">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="sell-state">State</label>
+                <select id="sell-state" required>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Madhya Pradesh" selected>Madhya Pradesh</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Bihar">Bihar</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="sell-village">Village & Tehsil</label>
+                <input type="text" id="sell-village" required placeholder="e.g. Village Samrala, Tehsil Khanna">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="sell-moisture">Grain Moisture % (Approx)</label>
+              <input type="text" id="sell-moisture" placeholder="e.g. 11.5% (Dry & Cleansed)">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" id="submit-crop-btn">
+              <span>Publish Crop to Kisan Marketplace</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. FARMER AUTHENTICATION & PROFILE MODAL -->
+  <div class="modal-overlay" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+    <div class="modal-card modal-md">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-badge-chip">KISAN IDENTITY PORTAL</span>
+          <h3 id="auth-modal-title">Farmer Account & Profile</h3>
+        </div>
+        <button class="icon-btn close-btn" id="close-auth-modal" aria-label="Close Auth modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Auth Tabs: Login vs Register -->
+        <div class="auth-tabs" id="auth-tabs-container">
+          <button class="auth-tab active" id="auth-tab-login">Kisan Sign In</button>
+          <button class="auth-tab" id="auth-tab-register">New Farmer Register</button>
+        </div>
+
+        <!-- 3A: Login View -->
+        <div id="auth-view-login">
+          <form id="farmer-login-form">
+            <div class="form-group">
+              <label for="login-id">Mobile Number or Email</label>
+              <input type="text" id="login-id" required placeholder="Enter 10-digit mobile number" value="9898989898">
+            </div>
+            <div class="form-group">
+              <label for="login-pass">Password</label>
+              <input type="password" id="login-pass" required placeholder="Enter password" value="kisan123">
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">
+              💡 Demo Farmer Account: Mobile <code>9898989898</code> / Password <code>kisan123</code>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" id="btn-login-submit">
+              <span>Sign In to Krishi Sewa</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- 3B: Register View -->
+        <div id="auth-view-register" style="display: none;">
+          <form id="farmer-register-form">
+            <div class="form-group">
+              <label for="reg-name">Full Name (किसान का नाम)</label>
+              <input type="text" id="reg-name" required placeholder="e.g. Ramesh Patel">
+            </div>
+            <div class="form-group">
+              <label for="reg-phone">Mobile Number</label>
+              <input type="tel" id="reg-phone" required placeholder="10-digit mobile number">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-state">State</label>
+                <select id="reg-state" required>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="reg-village">Village / District</label>
+                <input type="text" id="reg-village" placeholder="e.g. Kheda, Anand">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reg-pass">Create Password</label>
+              <input type="password" id="reg-pass" required placeholder="At least 6 characters">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" id="btn-register-submit">
+              <span>Create Verified Kisan Account</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- 3C: Logged In Profile View -->
+        <div id="auth-view-profile" style="display: none;">
+          <div class="profile-card">
+            <div class="profile-avatar">👨‍🌾</div>
+            <div class="profile-details">
+              <h4 id="prof-name">Ramesh Patel</h4>
+              <p class="text-sm" id="prof-phone">+91 98989 89898</p>
+              <p class="text-xs text-muted" id="prof-loc">Gujarat • Kisan Kendra Member</p>
+            </div>
+          </div>
+          <div class="profile-actions">
+            <button class="btn btn-outline btn-block" id="btn-view-my-orders">View My Farm Orders</button>
+            <button class="btn btn-danger btn-block" id="btn-farmer-logout" style="margin-top: 8px;">Log Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. ORDER TRACKING MODAL -->
+  <div class="modal-overlay" id="track-modal" role="dialog" aria-modal="true" aria-labelledby="track-modal-title">
+    <div class="modal-card modal-md">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-badge-chip">LIVE DISPATCH TRACKER</span>
+          <h3 id="track-modal-title">📦 Track Your Farm Order</h3>
+        </div>
+        <button class="icon-btn close-btn" id="close-track-modal" aria-label="Close Tracking modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="track-order-form" class="track-form">
+          <div class="form-group">
+            <label for="track-id-input">Enter Krishi Order ID or Mobile Number</label>
+            <div class="input-with-action">
+              <input type="text" id="track-id-input" placeholder="e.g. KS-882910 or 9898989898" value="KS-882910" required>
+              <button type="submit" class="btn btn-primary" id="track-submit-btn">Track</button>
+            </div>
+          </div>
+        </form>
+
+        <div id="track-result-container" class="track-result-box">
+          <div class="track-header-meta">
+            <div>
+              <span class="text-muted text-xs">Order ID:</span>
+              <strong id="track-disp-id">#KS-882910</strong>
+            </div>
+            <div>
+              <span class="badge-status status-confirmed" id="track-disp-status">Confirmed</span>
+            </div>
+          </div>
+
+          <div class="timeline" id="track-timeline">
+            <!-- Timeline steps rendered dynamically -->
+            <div class="timeline-step step-done">
+              <div class="step-circle">✓</div>
+              <div class="step-content">
+                <h5>Order Placed & Certified</h5>
+                <p>Order accepted with certified germination guarantee</p>
+              </div>
+            </div>
+            <div class="timeline-step step-done">
+              <div class="step-circle">✓</div>
+              <div class="step-content">
+                <h5>Allocated at Regional Krishi Hub</h5>
+                <p>Dispatched to fulfillment center</p>
+              </div>
+            </div>
+            <div class="timeline-step step-active">
+              <div class="step-circle">3</div>
+              <div class="step-content">
+                <h5>Quality Inspection & Dispatch</h5>
+                <p>Bag sealing and moisture verification in progress</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="step-circle">4</div>
+              <div class="step-content">
+                <h5>Village Doorstep Delivery</h5>
+                <p>Expected arrival at farm gate within 24-48 hrs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. KRISHI DOCTOR (AGRONOMY CONSULTATION) MODAL -->
+  <div class="modal-overlay" id="doctor-modal" role="dialog" aria-modal="true" aria-labelledby="doctor-modal-title">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-badge-chip">FREE AGRONOMIST CELL</span>
+          <h3 id="doctor-modal-title">🩺 Krishi Doctor — Ask Certified Agronomist</h3>
+          <p class="modal-sub">Get expert scientific advice on pest attacks, crop diseases, fertilizer dosage, and soil health.</p>
+        </div>
+        <button class="icon-btn close-btn" id="close-doctor-modal" aria-label="Close Doctor modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="ask-doctor-form" class="doctor-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="doc-farmer-name">Farmer Name</label>
+              <input type="text" id="doc-farmer-name" required placeholder="e.g. Ramesh Patel">
+            </div>
+            <div class="form-group">
+              <label for="doc-crop-name">Crop / Variety</label>
+              <input type="text" id="doc-crop-name" required placeholder="e.g. Wheat, Cotton, Mustard, Tomato">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="doc-question">Describe Crop Problem / Query</label>
+            <textarea id="doc-question" rows="3" required placeholder="e.g. Leaves turning yellow from bottom, white spots observed on stem after recent irrigation. Please advise cure."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit-doc-btn">
+            <span>Send Query to Senior Agronomist</span>
+          </button>
+        </form>
+
+        <h4 style="margin: 24px 0 12px; font-size: 1rem;">Recent Agronomy Consultations & Advice:</h4>
+        <div class="qna-list" id="doctor-qna-list">
+          <!-- Dynamically populated from /api/consultations -->
+        </div>
       </div>
     </div>
   </div>

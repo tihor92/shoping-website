@@ -1,61 +1,86 @@
-# 🌾 Krishi Sewa (कृषि सेवा) — Online Agriculture & Farming Store
+# 🌾 Krishi Sewa (कृषि सेवा) — Complete Full-Stack Agricultural E-Commerce & Marketplace
 
-A modern, high-yield agricultural e-commerce frontend built specifically for farmers and agriculturalists with semantic **HTML5**, **CSS3 (Vanilla)**, and **JavaScript (Vanilla)**.
+A modern, high-yield **full-stack agricultural e-commerce platform and fair-price crop marketplace** designed for Indian farmers, agronomists, and agricultural buyers.
 
 ---
 
-## ✨ Features
+## 🌟 Key Architecture & Stack
 
-1. **Agri-Brand & Visuals**:
-   * **Krishi Sewa** identity with bilingual headers (*Krishi Sewa • कृषि सेवा • Kisan Kendra*).
-   * Fresh emerald green and golden wheat harvest color palette.
-   * Light/Dark theme toggle with automatic `localStorage` persistence.
-   * Fully responsive across mobile, tablet, and desktop devices.
+### **Backend (Node.js + Express REST API)**
+- **Server**: Express 5.x server ([`server.js`](file:///server.js)) serving REST APIs and static frontend assets.
+- **Vercel Serverless Ready**: [`api/index.js`](file:///api/index.js) export with [`vercel.json`](file:///vercel.json) rewrite routes for zero-config global cloud deployment.
+- **Database Engine**: Persistent JSON-backed relational storage in [`database.js`](file:///database.js) and `data/` directory.
+- **Authentication**: JWT authentication with `jsonwebtoken` and `bcryptjs` password hashing.
+- **Security & Standards**: CORS enabled, input validation, structured HTTP status codes, and atomic file persistence.
 
-2. **Farming Catalog & Crop Care Categories**:
-   * **Categories**:
-     * 🌱 *Certified Seeds (Wheat, Tomato, Mustard, etc.)*
-     * 🧪 *Bio-Fertilizers & Nutrients (Vermicompost, NPK 19:19:19)*
-     * 🚜 *Farm Tools & Sprayers (16L Battery Knapsack Sprayer, Push Seeder)*
-     * 🛡️ *Crop Protection & Pest Care (Cold-pressed Neem Oil, Solar Pest Repeller)*
-     * 💧 *Micro-Drip & Sprinkler Irrigation (0.5 Acre Complete Kits)*
-   * **Live Farm Search**: Real-time searching with instant query clearing.
-   * **Price Ceiling Filter**: Slider adjusting up to ₹6,000.
-   * **Sorting**: Featured / Best Harvest, Price (Low to High / High to Low), Farmer Rating, and Alphabetical (A-Z).
+### **Frontend (HTML5 + Vanilla CSS3 + JavaScript)**
+- **Storefront**: Certified seeds, bio-fertilizers, knapsack sprayers, micro-irrigation kits, and crop protection.
+- **Live APMC Mandi & MSP Ticker**: Real-time market rates ticker comparing modal price against Government Minimum Support Price (MSP).
+- **Kisan Bazaar (Farmer Direct Marketplace)**: Tab allowing farmers to list their harvested crops (Basmati Rice, Sharbati Wheat, Mustard, Soybean) directly for buyers with MSP protection.
+- **Kisan Identity & Profiles**: Farmer registration, login, JWT session persistence, and order history.
+- **Live Order Tracking**: Milestone tracking for orders (`Order Placed`, `Allocated at Hub`, `Quality Inspection`, `Village Doorstep Delivery`).
+- **Krishi Doctor Agronomy Cell**: Interactive consultation board connecting farmers with ICAR agronomists.
+- **Cart & Village Delivery**: Free village delivery calculator, multi-currency support (INR ₹, USD $, EUR €, GBP £), and coupon system (`KISAN20`, `KRISHI10`).
 
-3. **Kisan Bag & Village Delivery**:
-   * Slide-out cart drawer with item quantity steppers and quick removal.
-   * **Free Village Delivery Progress Bar**: Automatically calculates progress toward the ₹1,500 free delivery threshold.
-   * **Farmer Discount Coupons**:
-     * Use code `KISAN20` for 20% farmer discount.
-     * Use code `KRISHI10` for 10% first order discount.
-   * Detailed breakdown: Subtotal, Farmer Discount, Village Delivery / Logistics, Total Payable.
+---
 
-4. **Multi-Currency Support**:
-   * Default currency: **INR (₹)**.
-   * Switchable to **USD ($)**, **EUR (€)**, and **GBP (£)**.
+## 📡 REST API Endpoints
 
-5. **Wishlist (Saved for Next Sowing)**:
-   * Save seasonal varieties and tools for reordering.
-
-6. **Quick View Modal**:
-   * Displays germination purity, disease resistance specs, pack sizes, and instant bag addition.
-
-7. **Kisan Express Checkout**:
-   * Farm and village address inputs (Tehsil, District, PIN code).
-   * Supports **Cash on Delivery (Pay at Farm upon inspection)**, UPI, RuPay, and Kisan Credit Card.
-   * Simulates order confirmation with a unique Krishi Order ID (`#KS-XXXXXX`).
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/health` | Server status and uptime |
+| `GET` | `/api/stats` | Platform statistics (registered farmers, active orders, coverage) |
+| `GET` | `/api/products` | Get products with search, category, and price filters |
+| `GET` | `/api/products/:id` | Get details of a single product |
+| `POST` | `/api/products` | Add a new product to inventory |
+| `PUT` | `/api/products/:id` | Update product details |
+| `DELETE` | `/api/products/:id` | Delete product from catalog |
+| `GET` | `/api/categories` | Get category breakdown with counts |
+| `GET` | `/api/mandi-rates` | Live APMC Mandi and MSP rates (optional `?state=&crop=`) |
+| `GET` | `/api/farmer/crops` | Get direct harvest crop marketplace listings |
+| `POST` | `/api/farmer/crops` | Post a harvested crop to Kisan Bazaar |
+| `POST` | `/api/orders` | Place a verified farm order |
+| `GET` | `/api/orders/:id` | Track specific order by Krishi Order ID |
+| `GET` | `/api/orders` | List orders for mobile number or user |
+| `POST` | `/api/auth/register` | Register a new farmer account |
+| `POST` | `/api/auth/login` | Authenticate farmer and return JWT token |
+| `GET` | `/api/auth/me` | Fetch authenticated user profile (`Authorization: Bearer <token>`) |
+| `GET` | `/api/consultations` | Get answered agronomy consultations |
+| `POST` | `/api/consultations` | Submit query to Krishi Doctor agronomy team |
 
 ---
 
 ## 🚀 How to Run Locally
 
-### Option 1: Direct in Browser
-Open [`index.html`](file:///c:/Users/tihor/OneDrive/Desktop/shoping%20website/index.html) directly in any web browser.
-
-### Option 2: Using the Built-In Local Node Server
-Open PowerShell / Terminal in this folder and run:
+### 1. Install Dependencies
 ```bash
-node server.js
+npm install
 ```
-Then visit **[http://localhost:3000](http://localhost:3000)** in your browser.
+
+### 2. Start the Full-Stack Server
+```bash
+npm start
+```
+Or for development:
+```bash
+npm run dev
+```
+
+Visit **[http://localhost:3000](http://localhost:3000)** in your browser.
+
+### 3. Demo Credentials
+- **Farmer Account**:
+  - **Mobile**: `9898989898`
+  - **Password**: `kisan123`
+- **Admin Account**:
+  - **Email**: `admin@krishisewa.org`
+  - **Password**: `Kisan@2026`
+
+---
+
+## ☁️ Deployment on Vercel
+
+The project is structured with [`vercel.json`](file:///vercel.json) and [`api/index.js`](file:///api/index.js) for Vercel deployment:
+1. Push changes to GitHub: `git push origin main`
+2. Connect your repository on [vercel.com](https://vercel.com)
+3. Deploy! Both static frontend assets and the Express API serverless functions deploy automatically.

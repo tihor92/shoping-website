@@ -1,0 +1,163 @@
+[
+  {
+    "id": "KS-738907",
+    "customer": {
+      "fullName": "Devendra Kumar",
+      "mobile": "9811223344",
+      "village": "Aligarh Farm",
+      "district": "Aligarh",
+      "pin": "202001"
+    },
+    "items": [
+      {
+        "id": "ks-01",
+        "name": "Wheat Seeds",
+        "price": 1249,
+        "quantity": 2
+      }
+    ],
+    "pricing": {
+      "subtotal": 2498,
+      "discount": 499,
+      "total": 1999,
+      "currency": "INR"
+    },
+    "paymentMethod": "cod",
+    "paymentStatus": "Pay upon Delivery & Inspection",
+    "orderStatus": "Confirmed",
+    "trackingTimeline": [
+      {
+        "step": "Order Placed & Certified",
+        "time": "27/10/2026, 8:04:01 pm",
+        "done": true
+      },
+      {
+        "step": "Allocated at Regional Krishi Hub",
+        "time": "Dispatched to Fulfillment Hub",
+        "done": true
+      },
+      {
+        "step": "Quality Inspection & Dispatch",
+        "time": "In Progress",
+        "done": false
+      },
+      {
+        "step": "Village Doorstep Delivery",
+        "time": "Expected 2-3 Days",
+        "done": false
+      }
+    ],
+    "createdAt": "2026-10-27T14:34:01.546Z"
+  },
+  {
+    "id": "KS-497860",
+    "customer": {
+      "fullName": "Harpreet Singh",
+      "mobile": "9876501234",
+      "village": "Moga",
+      "state": "Punjab"
+    },
+    "items": [
+      {
+        "id": "ks-01",
+        "name": "Wheat Seeds",
+        "price": 1249,
+        "quantity": 1
+      }
+    ],
+    "pricing": {
+      "subtotal": 1249,
+      "discount": 0,
+      "shipping": 0,
+      "total": 1249,
+      "currency": "INR"
+    },
+    "paymentMethod": "cod",
+    "paymentStatus": "Pay upon Delivery & Inspection",
+    "orderStatus": "Confirmed",
+    "trackingTimeline": [
+      {
+        "step": "Order Placed & Certified",
+        "time": "27/10/2026, 7:55:07 pm",
+        "done": true
+      },
+      {
+        "step": "Allocated at Regional Krishi Hub",
+        "time": "Dispatched to Fulfillment Hub",
+        "done": true
+      },
+      {
+        "step": "Quality Inspection & Dispatch",
+        "time": "In Progress",
+        "done": false
+      },
+      {
+        "step": "Village Doorstep Delivery",
+        "time": "Expected 2-3 Days",
+        "done": false
+      }
+    ],
+    "createdAt": "2026-10-27T14:25:07.612Z"
+  },
+  {
+    "id": "KS-882910",
+    "customer": {
+      "fullName": "Ramesh Patel",
+      "mobile": "9898989898",
+      "email": "ramesh.farmer@krishisewa.org",
+      "state": "Gujarat",
+      "district": "Anand",
+      "village": "Vasad Road, Gam Samarkha",
+      "pin": "388306",
+      "notes": "Call before delivery. Farm gate is near tube well #3."
+    },
+    "items": [
+      {
+        "id": "ks-01",
+        "name": "Hybrid Wheat Seeds (HD-3086 Shresth)",
+        "price": 1249,
+        "quantity": 2
+      },
+      {
+        "id": "ks-02",
+        "name": "Bio-Organic Vermicompost Enriched Fertilizer",
+        "price": 549,
+        "quantity": 1
+      }
+    ],
+    "pricing": {
+      "subtotal": 3047,
+      "discount": 609,
+      "shipping": 0,
+      "total": 2438,
+      "currency": "INR",
+      "promoCode": "KISAN20"
+    },
+    "paymentMethod": "cod",
+    "paymentStatus": "Pending Inspection on Delivery",
+    "orderStatus": "Confirmed",
+    "trackingTimeline": [
+      {
+        "step": "Order Placed",
+        "time": "2026-10-27 10:15 AM",
+        "done": true
+      },
+      {
+        "step": "Allocated at Regional Krishi Hub",
+        "time": "2026-10-27 12:40 PM",
+        "done": true
+      },
+      {
+        "step": "Quality Inspection & Dispatch",
+        "time": "In Progress",
+        "done": false
+      },
+      {
+        "step": "Village Doorstep Delivery",
+        "time": "Expected Tomorrow",
+        "done": false
+      }
+    ],
+    "createdAt": "2026-10-27T10:15:00Z"
+  }
+]

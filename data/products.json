@@ -1,0 +1,254 @@
+[
+  {
+    "id": "ks-01",
+    "name": "Hybrid Wheat Seeds (HD-3086 Shresth)",
+    "category": "seeds",
+    "categoryLabel": "Certified Seeds",
+    "price": 1249,
+    "oldPrice": 1499,
+    "rating": 4.9,
+    "reviews": 1420,
+    "stock": 250,
+    "badge": "TOP HARVEST",
+    "badgeType": "badge-hot",
+    "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=700&q=80",
+    "description": "Government certified high-tillering variety with 99.8% germination purity, rust resistance, and high chapati quality. Ideal for timely irrigated sowing.",
+    "specs": [
+      "40kg Sealed Bag",
+      "99.8% Germination",
+      "Yellow Rust Resistant",
+      "Maturity: 140 Days"
+    ]
+  },
+  {
+    "id": "ks-02",
+    "name": "Bio-Organic Vermicompost Enriched Fertilizer",
+    "category": "fertilizers",
+    "categoryLabel": "Bio-Fertilizers",
+    "price": 549,
+    "oldPrice": 699,
+    "rating": 4.8,
+    "reviews": 890,
+    "stock": 180,
+    "badge": "100% ORGANIC",
+    "badgeType": "",
+    "image": "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=700&q=80",
+    "description": "Pure Eisenia Fetida earthworm castings enriched with beneficial microbes, mycorrhiza, and humic acid to rejuvenate soil texture and water retention.",
+    "specs": [
+      "25kg Pack",
+      "100% Chemical Free",
+      "High Humic Content",
+      "Enriched with Trichoderma"
+    ]
+  },
+  {
+    "id": "ks-03",
+    "name": "16L Battery Operated Knapsack Sprayer (Dual Motor)",
+    "category": "equipment",
+    "categoryLabel": "Tools & Sprayers",
+    "price": 2299,
+    "oldPrice": 2899,
+    "rating": 4.9,
+    "reviews": 654,
+    "stock": 95,
+    "badge": "-21% OFF",
+    "badgeType": "badge-sale",
+    "image": "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=700&q=80",
+    "description": "Heavy duty rechargeable 12V 12Ah battery sprayer with stainless steel extendable lance, dual brass nozzles, and pressure regulator. Covers 4 acres per charge.",
+    "specs": [
+      "16 Litre Tank",
+      "12V 12Ah Battery",
+      "Dual Brass Nozzles",
+      "4-Hour Continuous Run"
+    ]
+  },
+  {
+    "id": "ks-04",
+    "name": "Premium Hybrid Tomato Seeds (Arka Rakshak)",
+    "category": "seeds",
+    "categoryLabel": "Certified Seeds",
+    "price": 499,
+    "oldPrice": 650,
+    "rating": 4.9,
+    "reviews": 512,
+    "stock": 320,
+    "badge": "HIGH YIELD",
+    "badgeType": "",
+    "image": "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=700&q=80",
+    "description": "Triple disease resistant hybrid (ToLCV, BW, and EB). High firm deep red fruits weighing 90-100g, perfect for long-distance transport and export.",
+    "specs": [
+      "10g Pack (approx 3000 seeds)",
+      "Yield: 35-40 Tons/Acre",
+      "Triple Disease Resistant",
+      "Long Shelf Life"
+    ]
+  },
+  {
+    "id": "ks-05",
+    "name": "Pure Cold-Pressed Neem Oil 10,000 PPM Bio-Pesticide",
+    "category": "protection",
+    "categoryLabel": "Crop Care",
+    "price": 420,
+    "oldPrice": 550,
+    "rating": 4.8,
+    "reviews": 430,
+    "stock": 140,
+    "badge": "ORGANIC CERTIFIED",
+    "badgeType": "badge-hot",
+    "image": "https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=700&q=80",
+    "description": "Natural broad-spectrum organic insect repellent formulated with high Azadirachtin content to control whiteflies, aphids, thrips, and mites without harming bees.",
+    "specs": [
+      "1 Litre Bottle",
+      "10,000 PPM Azadirachtin",
+      "Water Soluble with Emulsifier",
+      "Zero Chemical Residue"
+    ]
+  },
+  {
+    "id": "ks-06",
+    "name": "Micro-Drip Irrigation Complete Kit (1/2 Acre)",
+    "category": "irrigation",
+    "categoryLabel": "Irrigation",
+    "price": 3499,
+    "oldPrice": 4200,
+    "rating": 4.8,
+    "reviews": 320,
+    "stock": 45,
+    "badge": "WATER SAVER",
+    "badgeType": "",
+    "image": "https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&w=700&q=80",
+    "description": "Complete high-density polyethylene micro-irrigation system with 16mm main lateral line, inline drippers, screen filter, punch tool, and end caps.",
+    "specs": [
+      "Covers 0.5 Acre",
+      "Saves 60% Water",
+      "UV Stabilized Pipes",
+      "Screen Filter Included"
+    ]
+  },
+  {
+    "id": "ks-07",
+    "name": "Digital 4-in-1 Soil pH, Moisture & Sunlight Tester",
+    "category": "equipment",
+    "categoryLabel": "Tools & Sprayers",
+    "price": 899,
+    "oldPrice": 1200,
+    "rating": 4.7,
+    "reviews": 280,
+    "stock": 75,
+    "badge": "SMART FARMING",
+    "badgeType": "",
+    "image": "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=700&q=80",
+    "description": "Instant electronic soil diagnostic probe measuring soil fertility, pH balance (3.5 to 9.0), moisture level, and ambient sunlight intensity.",
+    "specs": [
+      "Dual High Precision Probes",
+      "Backlit LCD Screen",
+      "No Batteries Needed for pH",
+      "Quick 5-Second Readout"
+    ]
+  },
+  {
+    "id": "ks-08",
+    "name": "NPK 19:19:19 100% Water Soluble Foliar Fertilizer",
+    "category": "fertilizers",
+    "categoryLabel": "Bio-Fertilizers",
+    "price": 680,
+    "oldPrice": 850,
+    "rating": 4.9,
+    "reviews": 410,
+    "stock": 210,
+    "badge": "BESTSELLER",
+    "badgeType": "",
+    "image": "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=700&q=80",
+    "description": "Balanced formula of Nitrogen, Phosphorus, and Potassium for vegetative growth, rapid root development, and fruit sizing. 100% drip and spray compatible.",
+    "specs": [
+      "5kg Sealed Bag",
+      "100% Water Soluble",
+      "Rapid Crop Absorption",
+      "Zero Sediment Clotting"
+    ]
+  },
+  {
+    "id": "ks-09",
+    "name": "Manual Hand Push Seed Sower & Fertilizer Planter",
+    "category": "equipment",
+    "categoryLabel": "Tools & Sprayers",
+    "price": 1850,
+    "oldPrice": 2400,
+    "rating": 4.8,
+    "reviews": 512,
+    "stock": 60,
+    "badge": "LABOUR SAVER",
+    "badgeType": "",
+    "image": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=700&q=80",
+    "description": "Ergonomic stainless-steel push seeder allowing a single farmer to sow seeds and deposit fertilizer simultaneously at precise soil depths without bending down.",
+    "specs": [
+      "Adjustable Depth 3-8cm",
+      "Dual Tube (Seed + Manure)",
+      "Rustproof Galvanized Steel",
+      "Saves 70% Labour"
+    ]
+  },
+  {
+    "id": "ks-10",
+    "name": "Certified Hybrid Mustard Seeds (Giriraj DRMRIJ-31)",
+    "category": "seeds",
+    "categoryLabel": "Certified Seeds",
+    "price": 620,
+    "oldPrice": 780,
+    "rating": 4.8,
+    "reviews": 340,
+    "stock": 190,
+    "badge": "41% OIL CONTENT",
+    "badgeType": "badge-sale",
+    "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=700&q=80",
+    "description": "High-performing bold mustard seeds with up to 41.5% oil content, strong resistance to white rust and Alternaria blight, and drought resilience.",
+    "specs": [
+      "1kg Sealed Pack",
+      "Yield: 10-12 Quintals/Acre",
+      "41.5% High Oil Yield",
+      "Maturity: 125-130 Days"
+    ]
+  },
+  {
+    "id": "ks-11",
+    "name": "Heavy-Duty Bypass Pruning Shears & Grafting Tool",
+    "category": "equipment",
+    "categoryLabel": "Tools & Sprayers",
+    "price": 499,
+    "oldPrice": 750,
+    "rating": 4.9,
+    "reviews": 220,
+    "stock": 130,
+    "badge": "JAPANESE STEEL",
+    "badgeType": "",
+    "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=700&q=80",
+    "description": "SK-5 high carbon hardened Japanese steel blades with Teflon coating, ergonomic shock-absorbing handles, and precision bypass clean cut.",
+    "specs": [
+      "SK-5 Carbon Steel Blade",
+      "Up to 25mm Branch Cutting",
+      "Safety Lock Latch",
+      "Non-Slip Ergonomic Grip"
+    ]
+  },
+  {
+    "id": "ks-12",
+    "name": "Solar Ultrasonic Animal & Crop Pest Repeller",
+    "category": "protection",
+    "categoryLabel": "Crop Care",
+    "price": 1399,
+    "oldPrice": 1800,
+    "rating": 4.7,
+    "reviews": 195,
+    "stock": 85,
+    "badge": "SOLAR POWERED",
+    "badgeType": "badge-hot",
+    "image": "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=700&q=80",
+    "description": "Keep wild boars, nilgai, rodents, and birds away from standing crops using motion-activated PIR sensors, variable ultrasonic frequencies, and flashing LED lights.",
+    "specs": [
+      "Solar Monocrystalline Panel",
+      "30ft Detection Range",
+      "IP44 Weatherproof",
+      "Zero Harm to Animals"
+    ]
+  }
+]

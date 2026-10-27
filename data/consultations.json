@@ -1,0 +1,32 @@
+[
+  {
+    "id": "qna-1575",
+    "farmerName": "Devendra Kumar",
+    "crop": "Mustard",
+    "question": "White spots on leaves after morning frost. What spray is recommended?",
+    "advice": "Our Senior Agronomist has received your query. Detailed organic and chemical management guidelines will be sent to your mobile via SMS.",
+    "expertName": "Dr. Krishi Sewa Agronomy Cell",
+    "status": "UNDER_REVIEW",
+    "createdAt": "2026-10-27T14:34:01.575Z"
+  },
+  {
+    "id": "qna-01",
+    "farmerName": "Dharmendra Yadav",
+    "crop": "Wheat (गेहूं)",
+    "question": "How do I identify and manage yellow rust at early tillering stage?",
+    "advice": "Spray Propiconazole 25% EC @ 1ml per litre water or Tebuconazole 25.9% EC. Apply when morning dew clears. Avoid excess urea application.",
+    "expertName": "Dr. V. K. Joshi (Senior Agronomist, ICAR)",
+    "status": "ANSWERED",
+    "createdAt": "2026-10-26T09:30:00Z"
+  },
+  {
+    "id": "qna-02",
+    "farmerName": "Gurpreet Singh",
+    "crop": "Mustard (सरसों)",
+    "question": "What is the ideal dose of sulphur per acre for increasing oil content?",
+    "advice": "Apply Bentonite Sulphur (90% S) @ 10-12 kg per acre at time of final land preparation. It improves oil synthesis and enhances cold resistance.",
+    "expertName": "Dr. Ananya Ray (Soil Scientist)",
+    "status": "ANSWERED",
+    "createdAt": "2026-10-27T08:00:00Z"
+  }
+]
